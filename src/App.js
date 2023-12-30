@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
 import abi from "./abi/abi.json";
 import { useEffect, useState } from "react";
+import { handleSetNum1, handleShowSetNum1, handleShowSetNum2, handleSetNum2, handleDevision, handleResultDivision, handleMinus, handleResultMinus, handlePlus, handleResultPluse, handleMultiplication, handleResultMultiplication } from "./modules/handller_Opration";
 
 function App() {
   const [num1, setNum1] = useState(0);
@@ -32,142 +33,53 @@ function App() {
     init();
   })
 
-  const handleSetNum1 = async () => {
+  const handleClickSetNum1 = async () => {
+    await handleSetNum1(contract, num1);
+  };
 
-    try {
-      const SetNum1 = await contract.setNum1(num1);
-      await SetNum1.wait()
+  const handleClickShowNum1 = async () => {
+    await handleShowSetNum1(contract, setResult);
+  };
 
-      console.log('getNum1 Success');
-
-    } catch (error) {
-      console.error("Error setting value:", error);
-
-    }
+  const handleClickSetNum2 = async () => {
+    await handleSetNum2(contract, num2);
   }
 
-  const handeShowSetNum1 = async () => {
-    try {
-      const resultNum1 = await contract.num1()
-      setResult(resultNum1.toString());
-      console.log("Value retrieved successfully:", resultNum1.toString());
-    } catch (error) {
-      console.error("Error getting value:", error);
-
-    }
-  }
-  const handleSetNum2 = async () => {
-
-    try {
-
-      const SetNum2 = await contract.setNum2(num2)
-      await SetNum2.wait();
-      console.log('getNum2 Success');
-
-    } catch (error) {
-      console.error("Error setting value:", error);
-    }
+  const handleClickShowNum2 = async () => {
+    await handleShowSetNum2(contract, setResult);
   }
 
-  const hadleShowSetNum2 = async () => {
-
-    try {
-      const resultNum2 = await contract.num2()
-      setResult(resultNum2.toString());
-      console.log("Value retrieved successfully:", resultNum2.toString());
-    } catch (error) {
-      console.error("Error getting value:", error);
-    }
-  }
-  const handleDevision = async () => {
-    try {
-      const division = await contract.Division()
-      console.log('divisioned !')
-    } catch (error) {
-      console.error('Error in division', error)
-
-    }
-  }
-  const handleShowResultDivision = async () => {
-    try {
-      const resultDivision = await contract.resultDivision()
-      setResult(resultDivision.toString())
-      console.log(`resultDivision: ${resultDivision.toString()}`)
-    } catch (error) {
-      console.error('Error in division', error)
-
-    }
+  const handleClickPlus = async () => {
+    await handlePlus(contract);
   }
 
-  const handleMinus = async () => {
-    try {
-      const Mins = await contract.Minus();
-      await Mins.wait();
-      console.log('Minused !')
-    } catch (error) {
-      console.error('Error in Minus', error)
-
-    }
+  const handleClickMinus = async () => {
+    await handleMinus(contract);
   }
 
-  const handleResultMinus = async () => {
-    try {
-      const ResultMinus = await contract.resultMinus();
-      setResult(ResultMinus.toString())
-      console.log(`Minused ${ResultMinus.toString()}`)
-    } catch (error) {
-      console.error('Error in Minus', error)
-
-    }
+  const handleClickMultiplication = async () => {
+    await handleMultiplication(contract);
   }
 
-  const handlePlus = async () => {
-    try {
-      const Pluse = await contract.Pluse();
-      await Pluse.wait();
-      console.log('Plused !')
-    } catch (error) {
-      console.error('Error in Plus', error)
-
-    }
+  const handleClickDevision = async () => {
+    await handleDevision(contract);
   }
 
-  const handleResultPluse = async () => {
-    try {
-      const ReslutPluse = await contract.resultPlus();
-      setResult(ReslutPluse.toString())
-      console.log(`Plused ${ReslutPluse.toString()}`)
-    } catch (error) {
-      console.error('Error in Plus', error)
-
-    }
+  const handleClickShowResultDivision = async () => {
+    await handleResultDivision(contract, setResult);
   }
 
-  const handleMultiplication = async () => {
-    try {
-      const Mutiplication = await contract.multiplication();
-      Mutiplication.wait();
-      console.log('Multiplication !')
-
-    } catch (error) {
-      console.error('Mulutiplicated error :', error);
-    }
+  const handleClickShowResultMultiplication = async () => {
+    await handleResultMultiplication(contract, setResult);
   }
 
-  const handleResultMultiplication = async () => {
-    try {
-      const ResultMultipllication = await contract.resultZarb();
-      setResult(ResultMultipllication.toString());
-      console.log(`Multiplicated ! ${ResultMultipllication.toString()}`)
-    } catch (error) {
-
-      console.error('error in Multiplicatid ', error)
-
-    }
+  const handleClickShowResultMinus = async () => {
+    await handleResultMinus(contract, setResult);
   }
 
-
-
+  const handleClickShowResultPluse = async () => {
+    await handleResultPluse(contract, setResult);
+  }
   return (
 
     <div className="App">
@@ -176,18 +88,19 @@ function App() {
         <input value={num2} onChange={(e) => setNum2(e.target.value)} placeholder="getNum2"></input>
         <input value={result} placeholder="showResult"></input>
 
-        <button onClick={handleSetNum1}>getNum1</button>
-        <button onClick={handleSetNum2}> getNum2</button>
-        <button onClick={handlePlus}>Plus</button>
-        <button onClick={handleMultiplication}>Mutiplication</button>
-        <button onClick={handleDevision}>Devision</button>
-        <button onClick={handleMinus}>Miuns</button>
-        <button onClick={handeShowSetNum1}>ShowRESULT1</button>
-        <button onClick={hadleShowSetNum2}>ShowRESULT2</button>
-        <button onClick={handleShowResultDivision}>ShowResultDivision</button>
-        <button onClick={handleResultMinus}>ShowResultMinus</button>.
-        <button onClick={handleResultPluse}>ShowResultPluse</button>
-        <button onClick={handleResultMultiplication}>ShowResultMultiplication</button>
+        <button onClick={handleClickSetNum1} >getNum1</button>
+        <button onClick={handleClickSetNum2}> getNum2</button>
+        <button onClick={handleClickPlus}>Plus</button>
+        <button onClick={handleClickMultiplication}>Mutiplication</button>
+        <button onClick={handleClickDevision}>Devision</button>
+        <button onClick={handleClickMinus}>Miuns</button>
+
+        <button onClick={handleClickShowResultDivision}>ShowResultDivision</button>
+        <button onClick={handleClickShowResultMinus}>ShowResultMinus</button>.
+        <button onClick={handleClickShowResultPluse}>ShowResultPluse</button>
+        <button onClick={handleClickShowResultMultiplication}>ShowResultMultiplication</button>
+        <button onClick={handleClickShowNum1} >ShowNum1</button>
+        <button onClick={handleClickShowNum2}>ShowNum2</button>
 
 
       </div>
