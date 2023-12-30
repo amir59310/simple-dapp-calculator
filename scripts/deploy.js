@@ -9,7 +9,7 @@ async function main() {
     // console.log("Contract deployed at:", contract.address);
 
     // for contract example:
-    
+
     const calc = await ethers.getContractFactory("calc");
     const contract = await calc.deploy();
 

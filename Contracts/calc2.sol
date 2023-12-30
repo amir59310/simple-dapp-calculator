@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract calc {
+contract calc2 {
     uint public num1;
     uint public num2;
     uint public showResultmultiplication;
@@ -26,48 +26,29 @@ contract calc {
 
 
             //@ processing multiplication Number ...
-            function multiplication() public {
+            function multiplication() public returns(uint) {
                 showResultmultiplication = num1 * num2;
+                return showResultmultiplication;
             }
 
             //@ processing Division Number ...
-            function Division() public {
+            function Division() public returns(uint){
                 showResultDivision = num1 / num2;
+                return showResultDivision;
+                
             }
 
             //@processing Puls Number...
-            function Pluse() public {
+            function Pluse() public returns(uint) {
                 showResultPlus = num1 + num2;
+                return showResultPlus;
             }
 
             //@processing Minus Number...
-            function Minus() public {
+            function Minus() public returns(uint) {
                 showResultMinus = num1 - num2;
+                return showResultMinus;
             }
 
-
-
-
-
-    ///Partions Show Result
-    //@ Show Result Plus
-    function resultPlus() public view returns (uint) {
-        return showResultPlus;
-    }
-
-    //@ Show Result Minus
-    function resultMinus() public view returns (uint) {
-        return showResultMinus;
-    }
-
-    //@ Show Result Division
-    function resultDivision() public view returns (uint) {
-        return showResultDivision;
-    }
-
-    //@ Show Result Aditonality
-    function resultZarb() public view returns (uint) {
-        return showResultmultiplication;
-    }
 }
 
