@@ -95,7 +95,7 @@ function App() {
       console.log(`resultDivision: ${resultDivision.toString()}`)
     } catch (error) {
       console.error('Error in division', error)
-      
+
     }
   }
 
@@ -106,19 +106,64 @@ function App() {
       console.log('Minused !')
     } catch (error) {
       console.error('Error in Minus', error)
-      
+
     }
   }
-  
-  const handleResultMinus = async ()=>{
-   try {
-    const ResultMinus = await contract.resultMinus();
-    setResult(ResultMinus.toString())
-    console.log(`Minused ${ResultMinus.toString()}`)
-   } catch (error) {
-    console.error('Error in Minus', error)
-    
-   }
+
+  const handleResultMinus = async () => {
+    try {
+      const ResultMinus = await contract.resultMinus();
+      setResult(ResultMinus.toString())
+      console.log(`Minused ${ResultMinus.toString()}`)
+    } catch (error) {
+      console.error('Error in Minus', error)
+
+    }
+  }
+
+  const handlePlus = async () => {
+    try {
+      const Pluse = await contract.Pluse();
+      await Pluse.wait();
+      console.log('Plused !')
+    } catch (error) {
+      console.error('Error in Plus', error)
+
+    }
+  }
+
+  const handleResultPluse = async () => {
+    try {
+      const ReslutPluse = await contract.resultPlus();
+      setResult(ReslutPluse.toString())
+      console.log(`Plused ${ReslutPluse.toString()}`)
+    } catch (error) {
+      console.error('Error in Plus', error)
+
+    }
+  }
+
+  const handleMultiplication = async () => {
+    try {
+      const Mutiplication = await contract.multiplication();
+      Mutiplication.wait();
+      console.log('Multiplication !')
+
+    } catch (error) {
+      console.error('Mulutiplicated error :', error);
+    }
+  }
+
+  const handleResultMultiplication = async () => {
+    try {
+      const ResultMultipllication = await contract.resultZarb();
+      setResult(ResultMultipllication.toString());
+      console.log(`Multiplicated ! ${ResultMultipllication.toString()}`)
+    } catch (error) {
+
+      console.error('error in Multiplicatid ', error)
+
+    }
   }
 
 
@@ -133,14 +178,16 @@ function App() {
 
         <button onClick={handleSetNum1}>getNum1</button>
         <button onClick={handleSetNum2}> getNum2</button>
-        <button>Plus</button>
-        <button>Mutiplication</button>
+        <button onClick={handlePlus}>Plus</button>
+        <button onClick={handleMultiplication}>Mutiplication</button>
         <button onClick={handleDevision}>Devision</button>
         <button onClick={handleMinus}>Miuns</button>
         <button onClick={handeShowSetNum1}>ShowRESULT1</button>
         <button onClick={hadleShowSetNum2}>ShowRESULT2</button>
         <button onClick={handleShowResultDivision}>ShowResultDivision</button>
-        <button onClick={handleResultMinus}>ShowResultMinus</button>
+        <button onClick={handleResultMinus}>ShowResultMinus</button>.
+        <button onClick={handleResultPluse}>ShowResultPluse</button>
+        <button onClick={handleResultMultiplication}>ShowResultMultiplication</button>
 
 
       </div>
