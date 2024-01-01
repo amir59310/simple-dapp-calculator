@@ -32,7 +32,7 @@ function App() {
     }
     init();
   })
-
+  //Hnadller OPRATION
   const handleClickSetNum1 = async () => {
     await handleSetNum1(contract, num1);
   };
