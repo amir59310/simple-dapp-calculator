@@ -2,6 +2,7 @@ import { ethers } from "ethers";
 import abi from "./abi/abi.json";
 import { useEffect, useState } from "react";
 import { handleSetNum1, handleShowSetNum1, handleShowSetNum2, handleSetNum2, handleDevision, handleResultDivision, handleMinus, handleResultMinus, handlePlus, handleResultPluse, handleMultiplication, handleResultMultiplication } from "./modules/handller_Opration";
+import Background_xs from "./Components/Background_xs";
 
 function App() {
   const [num1, setNum1] = useState(0);
@@ -83,6 +84,7 @@ function App() {
   return (
 
     <div className="App">
+      <Background_xs />
       <div>
         <input value={num1} onChange={(e) => setNum1(e.target.value)} placeholder="grtNum1"></input>
         <input value={num2} onChange={(e) => setNum2(e.target.value)} placeholder="getNum2"></input>
