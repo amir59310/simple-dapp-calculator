@@ -3,6 +3,7 @@ import abi from "./abi/abi.json";
 import { useEffect, useState } from "react";
 import { handleSetNum1, handleShowSetNum1, handleShowSetNum2, handleSetNum2, handleDevision, handleResultDivision, handleMinus, handleResultMinus, handlePlus, handleResultPluse, handleMultiplication, handleResultMultiplication } from "./modules/handller_Opration";
 import Background_xs from "./Components/Background_xs";
+import Calculator from "./Components/Calculator";
 
 function App() {
   const [num1, setNum1] = useState(0);
@@ -83,30 +84,13 @@ function App() {
   }
   return (
 
-    <div className="App">
+    <>
       <Background_xs />
-      <div>
-        <input value={num1} onChange={(e) => setNum1(e.target.value)} placeholder="grtNum1"></input>
-        <input value={num2} onChange={(e) => setNum2(e.target.value)} placeholder="getNum2"></input>
-        <input value={result} placeholder="showResult"></input>
+      <Calculator PropHandleClickSetNum1={handleClickSetNum1}
+      PropNum1={num1} />
 
-        <button onClick={handleClickSetNum1} >getNum1</button>
-        <button onClick={handleClickSetNum2}> getNum2</button>
-        <button onClick={handleClickPlus}>Plus</button>
-        <button onClick={handleClickMultiplication}>Mutiplication</button>
-        <button onClick={handleClickDevision}>Devision</button>
-        <button onClick={handleClickMinus}>Miuns</button>
-
-        <button onClick={handleClickShowResultDivision}>ShowResultDivision</button>
-        <button onClick={handleClickShowResultMinus}>ShowResultMinus</button>.
-        <button onClick={handleClickShowResultPluse}>ShowResultPluse</button>
-        <button onClick={handleClickShowResultMultiplication}>ShowResultMultiplication</button>
-        <button onClick={handleClickShowNum1} >ShowNum1</button>
-        <button onClick={handleClickShowNum2}>ShowNum2</button>
-
-
-      </div>
-    </div>
+      
+    </>
   );
 }
 
