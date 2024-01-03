@@ -85,11 +85,33 @@ function App() {
   return (
 
     <>
-      <Background_xs />
-      <Calculator PropHandleClickSetNum1={handleClickSetNum1}
-      PropNum1={num1} />
+      <div className=" relative min-h-screen">
+        <Background_xs />
+        <div className="absolute inset-0 flex items-center justify-center ">
+          <Calculator PropHandleClickSetNum1={handleClickSetNum1}
+            PropHandleClickSetNum2={handleClickSetNum2}
+            PropSetNum1={setNum1}
+            PropSetNum2={setNum2}
+            PropNum2={num2}
+            PropNum1={num1}
+            PropResult={result}
+            PropHnadleClickPlus={handleClickPlus}
+            PropHandleClickDevision={handleClickDevision}
+            PropHandleClickMultiplication={handleClickMultiplication}
+            PropHandleClickMinus={handleClickMinus}
+            PropHandleShowResultDivision={handleClickShowResultDivision}
+            PropHandleShowResultMinus={handleClickShowResultMinus}
+            PropHandleShowResultMultiplication={handleClickShowResultMultiplication}
+            PropHandleShowResultPluse={handleClickShowResultPluse}
+            PropHandleClickShowNum1={handleClickShowNum1}
+            PropHandleClickShowNum2={handleClickShowNum2}
+          />
+        </div>
+      </div>
 
-      
+
+
+
     </>
   );
 }
