@@ -44,18 +44,22 @@ const Calculator = ({ //Props
                 </div>
             </div>
 
-            <div>
+            <div className="bg-[#a1a4d688] rounded-xl flex flex-col items-center">
                 <div>
                     <label className="text-[#191825] font-mono text-xs font-bold tracking-tight ">Computational operators</label>
                 </div>
 
-                <div className="flex items-center justify-center gap-3 pt-1 pb-4">
+                <div className="flex items-center justify-center gap-3 pt-1 pb-3">
 
-                    <button onClick={PropHandleClickMultiplication} className="bg-[#a1a4d6] text-center px-[0.65rem] pb-1 rounded-[0.6rem] ">×</button>
-                    <button onClick={PropHandleClickDevision} className="bg-[#a1a4d6] pb-1 px-[0.65rem] rounded-[0.6rem] ">÷</button>
+                    <button onClick={PropHandleClickMultiplication} className="bg-[#adafe9] text-center px-[0.8rem] pb-1 rounded-[0.6rem] 
+                    drop-shadow-[0px_3px_4px_rgba(0,50,0,0.25)] ">×</button>
+                    <button onClick={PropHandleClickDevision} className="bg-[#adafe9] pb-1 px-[0.8rem] rounded-[0.6rem]
+                    drop-shadow-[0px_3px_4px_rgba(0,50,0,0.25)] ">÷</button>
                     <button onClick={PropHnadleClickPlus} className="
-                    bg-[#a1a4d6] px-[0.65rem] pb-1 rounded-[0.6rem] ">+</button>
-                    <button onClick={PropHandleClickMinus} className="bg-[#a1a4d6] px-[0.8rem] pb-[0.3rem] rounded-[0.6rem]" >-</button>
+                    bg-[#adafe9] px-[0.8rem] pb-1 rounded-[0.6rem] 
+                    drop-shadow-[0px_3px_4px_rgba(0,50,0,0.25)]">+</button>
+                    <button onClick={PropHandleClickMinus} className="bg-[#adafe9] px-[0.95rem] pb-[0.3rem] rounded-[0.6rem]
+                    drop-shadow-[0px_3px_4px_rgba(0,50,0,0.25)]" >-</button>
                 </div>
 
             </div>
