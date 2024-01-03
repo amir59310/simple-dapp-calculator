@@ -7,26 +7,41 @@ const Calculator = ({ //Props
 
     return (
 
-        <div>
-            <div>salammmmmmm</div>
-            <h1 className="">salam</h1>
-            <input value={PropNum1} onChange={(e) => PropSetNum1(e.target.value)} placeholder="grtNum1"></input>
-            <input value={PropNum2} onChange={(e) => PropSetNum2(e.target.value)} placeholder="getNum2"></input>
-            <input value={PropResult} placeholder="showResult"></input>
+        <div className="bg-gray-200 rounded-xl pt-4 px-3" >
+            <div className="flex items-center justify-center">
+                <input size={10} value={PropNum1} onChange={(e) => PropSetNum1(e.target.value)} placeholder="grtNum1"
+                    className="bg-gray-300"></input>
+                <button onClick={PropHandleClickSetNum1} >getNum1</button>
+            </div>
+            <div className="flex items-center justify-center">
+                <input size={10} value={PropNum2} onChange={(e) => PropSetNum2(e.target.value)} placeholder="getNum2"></input>
+                <button onClick={PropHandleClickSetNum2}> getNum2</button>
+            </div>
 
-            <button onClick={PropHandleClickSetNum1} >getNum1</button>
-            <button onClick={PropHandleClickSetNum2}> getNum2</button>
-            <button onClick={PropHnadleClickPlus}>Plus</button>
-            <button onClick={PropHandleClickMultiplication}>Mutiplication</button>
-            <button onClick={PropHandleClickDevision}>Devision</button>
-            <button onClick={PropHandleClickMinus}>Miuns</button>
+            <div className="flex items-center justify-center">
+                <input value={PropResult} placeholder="showResult"></input>
+            </div>
+            <div className="flex items-center justify-center">
+                <button onClick={PropHnadleClickPlus} className="
+                ">+</button>
+                <button onClick={PropHandleClickMultiplication}>*</button>
+                <button onClick={PropHandleClickDevision}>/</button>
+                <button onClick={PropHandleClickMinus}>-</button>
+            </div>
+            <div className="flex items-center justify-center ">
+                <button onClick={PropHandleShowResultDivision}>ResultDivision</button>
+                <button onClick={PropHandleShowResultMinus}>ResultMinus</button>
 
-            <button onClick={PropHandleShowResultDivision}>ShowResultDivision</button>
-            <button onClick={PropHandleShowResultMinus}>ShowResultMinus</button>.
-            <button onClick={PropHandleShowResultPluse}>ShowResultPluse</button>
-            <button onClick={PropHandleShowResultMultiplication}>ShowResultMultiplication</button>
-            <button onClick={PropHandleClickShowNum1} >ShowNum1</button>
-            <button onClick={PropHandleClickShowNum2}>ShowNum2</button>
+            </div>
+            <div className="flex items-center justify-center">
+                <button onClick={PropHandleShowResultPluse}>ResultPluse</button>
+                <button onClick={PropHandleShowResultMultiplication}>ResultMultiplication</button>
+            </div>
+            <div className="flex items-center justify-center">
+                <button onClick={PropHandleClickShowNum1} >ShowNum1</button>
+                <button onClick={PropHandleClickShowNum2}>ShowNum2</button>
+            </div>
+
 
 
         </div>
