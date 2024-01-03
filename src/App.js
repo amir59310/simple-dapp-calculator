@@ -1,9 +1,16 @@
 import { ethers } from "ethers";
 import abi from "./abi/abi.json";
 import { useEffect, useState } from "react";
-import { handleSetNum1, handleShowSetNum1, handleShowSetNum2, handleSetNum2, handleDevision, handleResultDivision, handleMinus, handleResultMinus, handlePlus, handleResultPluse, handleMultiplication, handleResultMultiplication } from "./modules/handller_Opration";
+import {
+  handleSetNum1, handleSetNum2, handleDevision, handleResultDivision,
+  handleMinus, handleResultMinus, handlePlus, handleResultPluse, handleMultiplication,
+  handleResultMultiplication, showStatusMessage
+} from "./modules/handller_Opration";
 import Background_xs from "./Components/Background_xs";
 import Calculator from "./Components/Calculator";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [num1, setNum1] = useState(0);
@@ -36,20 +43,14 @@ function App() {
   })
   //Hnadller OPRATION
   const handleClickSetNum1 = async () => {
-    await handleSetNum1(contract, num1);
-  };
 
-  const handleClickShowNum1 = async () => {
-    await handleShowSetNum1(contract, setResult);
+    await handleSetNum1(contract, num1);
   };
 
   const handleClickSetNum2 = async () => {
     await handleSetNum2(contract, num2);
   }
 
-  const handleClickShowNum2 = async () => {
-    await handleShowSetNum2(contract, setResult);
-  }
 
   const handleClickPlus = async () => {
     await handlePlus(contract);
@@ -86,9 +87,14 @@ function App() {
 
     <>
       <div className=" relative min-h-screen">
+        <div>
+          <ToastContainer />
+        </div>
         <Background_xs />
         <div className="absolute inset-0 flex items-center justify-center ">
-          <Calculator PropHandleClickSetNum1={handleClickSetNum1}
+
+          <Calculator
+            PropHandleClickSetNum1={handleClickSetNum1}
             PropHandleClickSetNum2={handleClickSetNum2}
             PropSetNum1={setNum1}
             PropSetNum2={setNum2}
@@ -103,8 +109,7 @@ function App() {
             PropHandleShowResultMinus={handleClickShowResultMinus}
             PropHandleShowResultMultiplication={handleClickShowResultMultiplication}
             PropHandleShowResultPluse={handleClickShowResultPluse}
-            PropHandleClickShowNum1={handleClickShowNum1}
-            PropHandleClickShowNum2={handleClickShowNum2}
+
           />
         </div>
       </div>

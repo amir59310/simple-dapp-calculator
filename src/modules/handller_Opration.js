@@ -1,3 +1,15 @@
+import { toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+export const showStatusMessage = async (promise, messages) => {
+    try {
+        await promise;
+        toast.success(messages.success);
+    } catch (error) {
+        toast.error(messages.error + ' ' + error.message);
+    }
+};
 
 export const handleSetNum1 = async (contract, num1) => {
     try {
@@ -5,20 +17,15 @@ export const handleSetNum1 = async (contract, num1) => {
         await SetNum1.wait();
 
         console.log('getNum1 Success');
+
     } catch (error) {
         console.error("Error setting value:", error);
+
     }
 };
 
-export const handleShowSetNum1 = async (contract, setResult) => {
-    try {
-        const resultNum1 = await contract.num1();
-        setResult(resultNum1.toString());
-        console.log("Value retrieved successfully:", resultNum1.toString());
-    } catch (error) {
-        console.error("Error getting value:", error);
-    }
-};
+
+
 export const handleSetNum2 = async (contract, num2) => {
 
     try {
@@ -32,16 +39,7 @@ export const handleSetNum2 = async (contract, num2) => {
     }
 }
 
-export const handleShowSetNum2 = async (contract, setResult) => {
 
-    try {
-        const resultNum2 = await contract.num2()
-        setResult(resultNum2.toString());
-        console.log("Value retrieved successfully:", resultNum2.toString());
-    } catch (error) {
-        console.error("Error getting value:", error);
-    }
-}
 export const handleDevision = async (contract) => {
     try {
         const division = await contract.Division()
