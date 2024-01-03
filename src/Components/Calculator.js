@@ -7,40 +7,76 @@ const Calculator = ({ //Props
 
     return (
 
-        <div className="bg-gray-200 rounded-xl pt-4 px-3" >
-            <div className="flex items-center justify-center">
-                <input size={10} value={PropNum1} onChange={(e) => PropSetNum1(e.target.value)} placeholder="grtNum1"
-                    className="bg-gray-300"></input>
-                <button onClick={PropHandleClickSetNum1} >getNum1</button>
+        <div className="bg-[#a1a4d66e]  drop-shadow-[0px_15px_20px_rgba(0,6,0,0.35)] rounded-xl pt-4 px-5 " >
+            <div className="">
+                <label className="text-[#191825] font-mono text-sm ml-4 ">
+                    Please Set Number
+                </label>
             </div>
-            <div className="flex items-center justify-center">
-                <input size={10} value={PropNum2} onChange={(e) => PropSetNum2(e.target.value)} placeholder="getNum2"></input>
-                <button onClick={PropHandleClickSetNum2}> getNum2</button>
+            <div className="flex items-center justify-center pb-2 gap-3" >
+
+                <input type="number" value={PropNum1} onChange={(e) => PropSetNum1(e.target.value)}
+                    className="bg-[#a1a4d6] rounded-[0.4rem] px-1 py- dark:text-slate-700  ring-0 focus:outline-none
+                    w-[9rem] focus:drop-shadow-[0px_1px_3px_rgba(0,50,0,0.35)]"></input>
+
+                <button onClick={PropHandleClickSetNum1} className="
+                bg-[#a1a4d6] text-xs font-mono font-bold py-[0.28rem] px-2 rounded-[0.4rem] text-[#4d497c] " >SET</button>
+            </div>
+            <div className="flex items-center justify-center pb-2 gap-3">
+                <input size={10} value={PropNum2} onChange={(e) => PropSetNum2(e.target.value)} placeholder="" className="
+                bg-[#a1a4d6] rounded-[0.4rem] px-1  dark:text-slate-700  ring-0 focus:outline-none
+                w-[9rem]"></input>
+                <button onClick={PropHandleClickSetNum2} className="bg-[#a1a4d6] text-xs text-[#4d497c] font-mono 
+                font-bold py-[0.28rem] px-2 rounded-[0.4rem]"> SET</button>
             </div>
 
-            <div className="flex items-center justify-center">
-                <input value={PropResult} placeholder="showResult"></input>
+            <div className="py-4">
+                <div className="">
+                    <label className="text-[#191825] font-mono text-sm  ">
+                        Calculation Result
+                    </label>
+                </div>
+
+                <div className="flex items-center justify-center pb-4 ">
+                    <input value={PropResult} placeholder="showResult" className=" 
+                rounded-[0.4rem] bg-[#a1a4d6] px-1  dark:text-slate-700  ring-0 focus:outline-none
+                w-[14rem]  "></input>
+                </div>
             </div>
-            <div className="flex items-center justify-center">
-                <button onClick={PropHnadleClickPlus} className="
-                ">+</button>
-                <button onClick={PropHandleClickMultiplication}>*</button>
-                <button onClick={PropHandleClickDevision}>/</button>
-                <button onClick={PropHandleClickMinus}>-</button>
+
+            <div>
+                <div>
+                    <label className="text-[#191825] font-mono text-xs font-bold tracking-tight ">Computational operators</label>
+                </div>
+
+                <div className="flex items-center justify-center gap-3 pt-1 pb-4">
+
+                    <button onClick={PropHandleClickMultiplication} className="bg-[#a1a4d6] text-center px-[0.65rem] pb-1 rounded-[0.6rem] ">×</button>
+                    <button onClick={PropHandleClickDevision} className="bg-[#a1a4d6] pb-1 px-[0.65rem] rounded-[0.6rem] ">÷</button>
+                    <button onClick={PropHnadleClickPlus} className="
+                    bg-[#a1a4d6] px-[0.65rem] pb-1 rounded-[0.6rem] ">+</button>
+                    <button onClick={PropHandleClickMinus} className="bg-[#a1a4d6] px-[0.8rem] pb-[0.3rem] rounded-[0.6rem]" >-</button>
+                </div>
+
             </div>
-            <div className="flex items-center justify-center ">
-                <button onClick={PropHandleShowResultDivision}>ResultDivision</button>
-                <button onClick={PropHandleShowResultMinus}>ResultMinus</button>
+
+
+
+            <div className="flex items-center justify-center gap-[0.65rem] pb-4 ">
+                <button onClick={PropHandleShowResultDivision} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.3rem] py-[0.15rem] rounded-[0.5rem]">
+                    R<span className="bg-[#7f81ac] ml-1 text-center px-[0.2rem] pb-[0.1rem] font-bold rounded-full">×</span></button>
+                <button onClick={PropHandleShowResultMinus} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.3rem] py-[0.15rem] rounded-[0.5rem]">
+                    R<span className="bg-[#7f81ac] ml-1 text-center px-[0.2rem] pb-[0.1rem] rounded-full">–</span></button>
+                <button onClick={PropHandleShowResultPluse} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.3rem] py-[0.15rem] rounded-[0.5rem]">
+                    R<span className="bg-[#7f81ac] ml-1 text-center px-[0.2rem] pb-[0.1rem] rounded-full">+</span></button>
+                <button onClick={PropHandleShowResultMultiplication} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.3rem] py-[0.15rem] rounded-[0.5rem]">
+                    R<span className="bg-[#7f81ac] ml-1  text-center px-[0.2rem] pb-[0.1rem] font-bold rounded-full">×</span></button>
 
             </div>
             <div className="flex items-center justify-center">
-                <button onClick={PropHandleShowResultPluse}>ResultPluse</button>
-                <button onClick={PropHandleShowResultMultiplication}>ResultMultiplication</button>
+
             </div>
-            <div className="flex items-center justify-center">
-                <button onClick={PropHandleClickShowNum1} >ShowNum1</button>
-                <button onClick={PropHandleClickShowNum2}>ShowNum2</button>
-            </div>
+
 
 
 
