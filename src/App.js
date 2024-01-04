@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import {
   handleSetNum1, handleSetNum2, handleDevision, handleResultDivision,
   handleMinus, handleResultMinus, handlePlus, handleResultPluse, handleMultiplication,
-  handleResultMultiplication, showStatusMessage
+  handleResultMultiplication,
 } from "./modules/handller_Opration";
 import Background_xs from "./Components/Background_xs";
 import Calculator from "./Components/Calculator";
@@ -43,8 +43,9 @@ function App() {
   })
   //Hnadller OPRATION
   const handleClickSetNum1 = async () => {
-
+    
     await handleSetNum1(contract, num1);
+    
   };
 
   const handleClickSetNum2 = async () => {
@@ -87,7 +88,7 @@ function App() {
 
     <>
       <div className=" relative min-h-screen">
-        <div>
+        <div className="" >
           <ToastContainer />
         </div>
         <Background_xs />

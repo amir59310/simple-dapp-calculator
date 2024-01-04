@@ -1,41 +1,35 @@
 import { toast } from 'react-toastify';
-
+import { SetNum1Toast, SetNum2Toast } from './ToastNotification';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const showStatusMessage = async (promise, messages) => {
-    try {
-        await promise;
-        toast.success(messages.success);
-    } catch (error) {
-        toast.error(messages.error + ' ' + error.message);
-    }
-};
+
 
 export const handleSetNum1 = async (contract, num1) => {
     try {
-        const SetNum1 = await contract.setNum1(num1);
-        await SetNum1.wait();
-
-        console.log('getNum1 Success');
-
+        await SetNum1Toast(async () => {
+            const SetNum1 = await contract.setNum1(num1);
+            await SetNum1.wait();
+            console.log('getNum1 Success');
+        });
     } catch (error) {
         console.error("Error setting value:", error);
-
+        toast.error("Error!");
     }
 };
-
-
 
 export const handleSetNum2 = async (contract, num2) => {
 
     try {
+        await SetNum2Toast(async () => {
+            const SetNum2 = await contract.setNum2(num2)
+            await SetNum2.wait();
+            console.log('getNum2 Success');
+        });
 
-        const SetNum2 = await contract.setNum2(num2)
-        await SetNum2.wait();
-        console.log('getNum2 Success');
 
     } catch (error) {
         console.error("Error setting value:", error);
+        toast.error("Error!");
     }
 }
 

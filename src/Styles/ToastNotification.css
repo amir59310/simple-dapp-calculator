@@ -1,0 +1,14 @@
+.custom-toast {
+    border-radius: 1rem !important;
+
+   
+    background-color: rgb(49, 51, 51) !important;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-bottom: 0px;
+    width: 165px;
+    height: 20px;
+ 
+}
+    
