@@ -7,7 +7,7 @@ const Calculator = ({ //Props
 
     return (
 
-        <div className="bg-[#a1a4d66e]  drop-shadow-[0px_1px_20px_rgba(0,6,0,0.5)] rounded-xl pt-4 px-5 " >
+        <div className="bg-[#a1a4d66e]  drop-shadow-[0px_1px_20px_rgba(0,6,0,0.5)] rounded-xl pt-4 px-5  mt-10" >
             <div className="">
                 <label className="text-[#191825] font-mono font-bold text-sm ml-4 ">
                     Please Set Number
@@ -68,7 +68,7 @@ const Calculator = ({ //Props
                 </div>
                 <div className="flex items-center justify-center gap-[0.7rem] pb-3 ">
                     <button onClick={PropHandleShowResultDivision} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.5rem] py-[0.3rem] rounded-[0.5rem]">
-                        R<span className="bg-[#7f81ac] ml-1 text-center px-[0.3rem] pb-[0.1rem] font-bold rounded-full">×</span></button>
+                        R<span className="bg-[#7f81ac] ml-1 text-center px-[0.3rem] pb-[0.1rem] font-bold rounded-full">÷</span></button>
                     <button onClick={PropHandleShowResultMinus} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.5rem] py-[0.3rem] rounded-[0.5rem]">
                         R<span className="bg-[#7f81ac] ml-1 text-center px-[0.3rem] pb-[0.1rem] rounded-full">–</span></button>
                     <button onClick={PropHandleShowResultPluse} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.5rem] py-[0.3rem] rounded-[0.5rem]">

@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { SetNum1Toast, SetNum2Toast } from './ToastNotification';
+import { SetNum1Toast, SetNum2Toast, HandleDivisionToast, HandleMinusToast, HandlePluseToast, HandleMultipToast } from './ToastNotification';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -36,10 +36,15 @@ export const handleSetNum2 = async (contract, num2) => {
 
 export const handleDevision = async (contract) => {
     try {
-        const division = await contract.Division()
-        console.log('divisioned !')
+        await HandleDivisionToast(async () => {
+
+            const division = await contract.Division()
+            await division.wait();
+            console.log('divisioned !')
+        })
     } catch (error) {
         console.error('Error in division', error)
+        toast.error("Error!");
 
     }
 }
@@ -56,11 +61,15 @@ export const handleResultDivision = async (contract, setResult) => {
 
 export const handleMinus = async (contract) => {
     try {
-        const Mins = await contract.Minus();
-        await Mins.wait();
-        console.log('Minused !')
+        await HandleMinusToast(async () => {
+            const Mins = await contract.Minus();
+            await Mins.wait();
+            console.log('Minused !')
+        })
+
     } catch (error) {
         console.error('Error in Minus', error)
+        toast.error("Error!");
 
     }
 }
@@ -78,11 +87,15 @@ export const handleResultMinus = async (contract, setResult) => {
 
 export const handlePlus = async (contract) => {
     try {
-        const Pluse = await contract.Pluse();
-        await Pluse.wait();
-        console.log('Plused !')
+        await HandlePluseToast(async () => {
+            
+            const Pluse = await contract.Pluse();
+            await Pluse.wait();
+            console.log('Plused !')
+        })
     } catch (error) {
         console.error('Error in Plus', error)
+        toast.error('Error!');
 
     }
 }
@@ -100,12 +113,15 @@ export const handleResultPluse = async (contract, setResult) => {
 
 export const handleMultiplication = async (contract) => {
     try {
-        const Mutiplication = await contract.multiplication();
-        Mutiplication.wait();
-        console.log('Multiplication !')
+        await HandleMultipToast(async()=>{
 
+            const Mutiplication = await contract.multiplication();
+            await Mutiplication.wait();
+            console.log('Multiplication !')
+        })
     } catch (error) {
         console.error('Mulutiplicated error :', error);
+        toast.error('Error!');
     }
 }
 
