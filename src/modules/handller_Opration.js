@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { SetNum1Toast, SetNum2Toast, HandleDivisionToast, HandleMinusToast, HandlePluseToast, HandleMultipToast } from './ToastNotification';
+import { SetNum1Toast, SetNum2Toast, HandleDivisionToast, HandleMinusToast, HandlePluseToast, HandleMultipToast } from './ToastNotificationComplex';
 import 'react-toastify/dist/ReactToastify.css';
 
 

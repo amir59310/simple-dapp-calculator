@@ -1,4 +1,14 @@
 import "../Styles/Animation.css";
+
+/**
+ * The Calculator component is a user interface element that provides functionality
+ * for basic arithmetic operations such as addition, subtraction, multiplication,
+ * and division. It accepts numerical input from the user and allows them to perform
+ * calculations. The component displays the results and supports operations with the
+ * numbers provided via props. It is designed to be visually appealing with a styled
+ * background and drop shadows for depth perception.
+ */
+
 const Calculator = ({ //Props
     PropNum1, PropNum2, PropSetNum1, PropSetNum2, PropResult,
     PropHandleClickSetNum1, PropHandleClickSetNum2, PropHnadleClickPlus,

@@ -1,5 +1,16 @@
 import { toast } from 'react-toastify';
-import "../Styles/ToastNotification.css";
+import "../Styles/ToastNotificationComplex.css";
+
+//This Componnet For Show Toast Notification
+
+
+// This component is used to display toast notifications.
+// The toast.promise function takes a Promise that will be resolved or rejected based on the asynchronous operation.
+// The promiseFunction is expected to be an asynchronous operation like an API call or any other operation that returns a promise.
+// If the operation is successful, the promise resolves and a success toast is shown.
+// If the operation fails, the promise rejects and an error toast is shown.
+
+//This Function Show Toast Notification from type(Promise) for SetNum1 
 
 export const SetNum1Toast = async (promiseFunction) => {
     toast.promise(
@@ -34,7 +45,7 @@ export const SetNum1Toast = async (promiseFunction) => {
     );
 };
 
-
+//This Function Show Toast Notification from type(Promise) for SetNum2
 export const SetNum2Toast = async (promiseFunction) => {
     toast.promise(
         new Promise(async (resolve, reject) => {
@@ -68,7 +79,7 @@ export const SetNum2Toast = async (promiseFunction) => {
     );
 };
 
-
+//This Function Show Toast Notification from type(Promise) for Devision
 export const HandleDivisionToast = async (promiseFunction) => {
     toast.promise(
         new Promise(async (resolve, reject) => {
@@ -101,7 +112,7 @@ export const HandleDivisionToast = async (promiseFunction) => {
 
     );
 };
-
+//This Function Show Toast Notification from type(Promise) for Minus
 export const HandleMinusToast = async (promiseFunction) => {
     toast.promise(
         new Promise(async (resolve, reject) => {
@@ -135,7 +146,7 @@ export const HandleMinusToast = async (promiseFunction) => {
     );
 };
 
-
+//This Function Show Toast Notification from type(Promise) for Pluse
 export const HandlePluseToast = async (promiseFunction) => {
     toast.promise(
         new Promise(async (resolve, reject) => {
@@ -169,11 +180,7 @@ export const HandlePluseToast = async (promiseFunction) => {
     );
 };
 
-
-
-
-
-
+//This Function Show Toast Notification from type(Promise) for Multiplication
 export const HandleMultipToast = async (promiseFunction) => {
     toast.promise(
         new Promise(async (resolve, reject) => {

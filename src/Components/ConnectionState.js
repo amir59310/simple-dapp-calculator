@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 
+//This Componnet For Show Connection State
 
 const ConnectionState = ({ viewWalletState }) => {
 
     const [svgColor, setSvgColor] = useState("#c50909")
 
+    //Get Data Account Connected From App.js(Contract) For Change Color Connection State 
     useEffect(() => {
         if (viewWalletState === "CONNECTED") {
             setSvgColor("#1e582b")
@@ -15,6 +17,7 @@ const ConnectionState = ({ viewWalletState }) => {
 
 
     }, [viewWalletState])
+
 
     return (
         <div className=" flex items-center justify-center drop-shadow-[0px_3px_4px_rgba(0,50,0,0.7)] animation-fade-down-connection-state">
