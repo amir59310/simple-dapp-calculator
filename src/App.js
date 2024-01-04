@@ -6,9 +6,11 @@ import {
   handleMinus, handleResultMinus, handlePlus, handleResultPluse, handleMultiplication,
   handleResultMultiplication,
 } from "./modules/handller_Opration";
+
 import Background_xs from "./Components/Background_xs";
 import Calculator from "./Components/Calculator";
 import { ToastContainer, toast } from 'react-toastify';
+import ConnectionState from "./Components/ConnectionState";
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -17,6 +19,7 @@ function App() {
   const [num2, setNum2] = useState(0);
   const [result, setResult] = useState(0);
   const [contract, setContract] = useState(null);
+  const [WalletState , setWalletState] = useState("DISCONNECTED");    
 
   useEffect(() => {
     const init = async () => {
@@ -24,7 +27,15 @@ function App() {
         ///@dev provider
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+
+        if(accounts.length > 0){
+          setWalletState("CONNECTED");
+        }else{
+          setWalletState("DISCONNECTED");
+        }
+
         const signer = provider.getSigner();
+
 
         ///@dev contract 
         const contractAddress = "0xC491fb3B57CAf2FdFFB70bc29595dE9439b4ae3b";
@@ -88,6 +99,9 @@ function App() {
 
     <>
       <div className=" relative min-h-screen">
+        <div className=" absolute inset-0">
+          <ConnectionState viewWalletState={WalletState} />
+        </div>
         <div className="" >
           <ToastContainer />
         </div>
