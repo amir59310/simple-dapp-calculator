@@ -1,3 +1,4 @@
+import "../Styles/Animation.css";
 const Calculator = ({ //Props
     PropNum1, PropNum2, PropSetNum1, PropSetNum2, PropResult,
     PropHandleClickSetNum1, PropHandleClickSetNum2, PropHnadleClickPlus,
@@ -7,7 +8,7 @@ const Calculator = ({ //Props
 
     return (
 
-        <div className="bg-[#a1a4d66e]  drop-shadow-[0px_1px_20px_rgba(0,6,0,0.5)] rounded-xl pt-4 px-5  mt-10" >
+        <div className="bg-[#a1a4d66e]  drop-shadow-[0px_1px_20px_rgba(0,6,0,0.5)] rounded-xl pt-4 px-5  mt-10 animation-fade-down-for-calculator" >
             <div className="">
                 <label className="text-[#191825] font-mono font-bold text-sm ml-4 ">
                     Please Set Number
