@@ -19,7 +19,7 @@ function App() {
   const [num2, setNum2] = useState(0);
   const [result, setResult] = useState(0);
   const [contract, setContract] = useState(null);
-  const [WalletState , setWalletState] = useState("DISCONNECTED");    
+  const [WalletState, setWalletState] = useState("DISCONNECTED");
 
   useEffect(() => {
     const init = async () => {
@@ -28,9 +28,9 @@ function App() {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
 
-        if(accounts.length > 0){
+        if (accounts.length > 0) {
           setWalletState("CONNECTED");
-        }else{
+        } else {
           setWalletState("DISCONNECTED");
         }
 
@@ -54,9 +54,9 @@ function App() {
   })
   //Hnadller OPRATION
   const handleClickSetNum1 = async () => {
-    
+
     await handleSetNum1(contract, num1);
-    
+
   };
 
   const handleClickSetNum2 = async () => {

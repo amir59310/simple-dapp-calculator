@@ -81,7 +81,7 @@ const Calculator = ({ //Props
                     <button onClick={PropHandleShowResultDivision} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.5rem] py-[0.3rem] rounded-[0.5rem]">
                         R<span className="bg-[#7f81ac] ml-1 text-center px-[0.3rem] pb-[0.1rem] font-bold rounded-full">÷</span></button>
                     <button onClick={PropHandleShowResultMinus} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.5rem] py-[0.3rem] rounded-[0.5rem]">
-                        R<span className="bg-[#7f81ac] ml-1 text-center px-[0.3rem] pb-[0.1rem] rounded-full">–</span></button>
+                        R<span className="bg-[#7f81ac] ml-1 text-center font-bold px-[0.3rem] pb-[0.1rem] rounded-full">–</span></button>
                     <button onClick={PropHandleShowResultPluse} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.5rem] py-[0.3rem] rounded-[0.5rem]">
                         R<span className="bg-[#7f81ac] ml-1 text-center px-[0.3rem] pb-[0.1rem] rounded-full">+</span></button>
                     <button onClick={PropHandleShowResultMultiplication} className="bg-[#a1a4d6] text-xs font-mono font-bold px-[0.5rem] py-[0.3rem] rounded-[0.5rem]">
