@@ -99,8 +99,8 @@ const Calculator = ({ //Props
 
                 </div>
             </div>
-            <div>
-                <p>Created by : <a target="">amir59310</a></p>
+            <div className="flex flex-col items-center justify-center font-mono md:pb-2 pt-3 ">
+                <p className=" text-[#2e2d2d]">Created by ♪ <a className="text-[#000000]" href="https://github.com/amir59310">Amir59310</a> </p>
             </div>
 
 
