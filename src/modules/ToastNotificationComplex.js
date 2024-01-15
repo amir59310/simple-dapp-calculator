@@ -37,7 +37,7 @@ export const SetNum1Toast = async (promiseFunction) => {
             draggable: true,
             progress: undefined,
             theme: "dark",
-            className: " custom-toast text-xs ",
+            className: " custom-toast text-xs  ",
 
 
         }
